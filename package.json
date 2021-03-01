@@ -1,0 +1,39 @@
+{
+    "name": "pro-mern-stack-2",
+    "version": "1.0.0",
+    "description": "pro mern(mongo express react node) stack 2",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run compile && nodemon -w server server/server.js",
+        "compile": "babel src --out-dir public",
+        "compile:watch": "npm run compile -- -w",
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/richapgupta/pro-mern-stack-2.git"
+    },
+    "keywords": [
+        "mongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js"
+    ],
+    "author": "Richa Gupta",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/richapgupta/pro-mern-stack-2/issues"
+    },
+    "homepage": "https://github.com/richapgupta/pro-mern-stack-2#readme",
+    "dependencies": {
+        "apollo-server-express": "^2.21.0",
+        "express": "^4.17.1",
+        "graphql": "^0.13.2",
+        "nodemon": "^1.19.4"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/preset-react": "^7.12.10"
+    }
+}
