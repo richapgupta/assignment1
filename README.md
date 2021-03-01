@@ -1,4 +1,4 @@
-# AboutMe Page
+# Assignment Page
 
 It is a SPA created using React and served using Express.
 
