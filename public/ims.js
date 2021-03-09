@@ -40,7 +40,7 @@ class ProductAdd extends React.Component {
 
   render() {
     return /*#__PURE__*/React.createElement("form", {
-      className: 'd-flex',
+      className: 'd-flex' + ' justify-content-between',
       name: "productAdd",
       onSubmit: this.handleSubmit
     }, /*#__PURE__*/React.createElement("div", {

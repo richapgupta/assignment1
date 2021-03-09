@@ -55,13 +55,11 @@ function AssignedTo(props) {
     const userStyle = {backgroundColor: color};
     if(status !== 'Unassigned') {
         return (
-
-
           <a href="#" style={userStyle} className={"username"}>{status.charAt(0)}</a>
         )
     } else {
        return (
-        <p>{status}</p>
+        <span className={"font-italic"}>{status}</span>
        )
     }
 }
@@ -77,7 +75,7 @@ function IssueRow(props) {
             <td style={style}>{issue.owner}</td>
             <td style={style}>
                 <h6 className={'m-0'}><strong> {issue.title}  </strong></h6>
-                <p className={'m-0'}>{issue.desc}</p>
+                <p className={'issue-desc'}>{issue.desc}</p>
             </td>
             <td style={style}>
                 <ButtonState priority={issue.priority} label={issue.label}/>
@@ -95,7 +93,7 @@ function IssueRow(props) {
 
 function IssueTable(props) {
 
-        const rowStyle = {borderBottom:"1px solid silver",textAlign:"left",padding: 10};
+        const rowStyle = {borderBottom:"1px solid silver",textAlign:"left",padding: 10,display:"table-cell", verticalAlign:"middle"};
         const issueRows = props.issues.map(issue => <IssueRow  rowStyle={rowStyle} key={issue.id} issue={issue}/>);
 
         return (

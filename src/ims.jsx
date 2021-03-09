@@ -55,7 +55,7 @@ class ProductAdd extends React.Component {
     }
     render() {
     return (
-        <form className={'d-flex'} name="productAdd" onSubmit={this.handleSubmit}>
+        <form className={'d-flex' + ' justify-content-between'} name="productAdd" onSubmit={this.handleSubmit}>
            <div className={"form-group"}>
             <label>Category</label>
             <select className={"form-control"} name="pcategory">

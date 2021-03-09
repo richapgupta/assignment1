@@ -66,7 +66,9 @@ function AssignedTo(props) {
       className: "username"
     }, status.charAt(0));
   } else {
-    return /*#__PURE__*/React.createElement("p", null, status);
+    return /*#__PURE__*/React.createElement("span", {
+      className: "font-italic"
+    }, status);
   }
 }
 
@@ -83,7 +85,7 @@ function IssueRow(props) {
   }, /*#__PURE__*/React.createElement("h6", {
     className: 'm-0'
   }, /*#__PURE__*/React.createElement("strong", null, " ", issue.title, "  ")), /*#__PURE__*/React.createElement("p", {
-    className: 'm-0'
+    className: 'issue-desc'
   }, issue.desc)), /*#__PURE__*/React.createElement("td", {
     style: style
   }, /*#__PURE__*/React.createElement(ButtonState, {
@@ -106,7 +108,9 @@ function IssueTable(props) {
   const rowStyle = {
     borderBottom: "1px solid silver",
     textAlign: "left",
-    padding: 10
+    padding: 10,
+    display: "table-cell",
+    verticalAlign: "middle"
   };
   const issueRows = props.issues.map(issue => /*#__PURE__*/React.createElement(IssueRow, {
     rowStyle: rowStyle,

@@ -6,7 +6,7 @@ const page = (
         <div className="profile-copy">
             <p className="">Hi I am Richa. I am an Entusiatic User Interface Developer with 8 yrs of work experience.
                 Being involved in various aspects of UI developments like -</p>
-                <ul class="">
+                <ul>
                 <li>Understanding Functional spec</li>
                 <li> Building Wireframe</li>
                 <li>Demoing Prototypes</li>

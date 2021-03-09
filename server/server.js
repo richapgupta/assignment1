@@ -1,31 +1,41 @@
+const fs = require("fs");
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 
 let aboutMessage = "Issue Tracker API v1.0";
-
-const typeDefs = `
-type Query {
-    about: String!
-}
-type Mutation {
-setAboutMessage(message:String!): String
-}`;
+const products = [];
 
 const resolvers = {
     Query: {
-        about: () => aboutMessage,
+        productList,
+        about,
     },
     Mutation: {
+        addProduct,
         setAboutMessage,
     },
 };
+
+function productList() {
+    return products;
+}
+
+function about() {
+    return aboutMessage;
+}
+
+function addProduct(_, { product }) {
+    product.id = products.length + 1;
+    products.push(product);
+    return product;
+}
 
 function setAboutMessage(_, { message }) {
     return (aboutMessage = message);
 }
 
 const server = new ApolloServer({
-    typeDefs,
+    typeDefs: fs.readFileSync("./server/schema.graphql", "utf-8"),
     resolvers,
 });
 
