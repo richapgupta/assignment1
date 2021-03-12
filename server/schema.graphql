@@ -11,22 +11,46 @@ type Product {
   name: String!
   category: Category!
   price: Float
-  imageUrl: String
+  image: String
+}
+
+type Issue {
+  id: Int!
+  assignedToStatus: String
+  owner: String!
+  effort: Int
+  title: String
+  desc: String
+  priority: String
+  label: String
 }
 
 input ProductInputs {
   name: String!
   category: Category!
   price: Float
-  imageUrl: String
+  image: String
+}
+
+input IssueInputs {
+  id: Int!
+  assignedToStatus: String
+  owner: String!
+  effort: Int
+  title: String
+  desc: String
+  priority: String
+  label: String
 }
 
 type Query {
   productList: [Product!]!
+  issueList: [Issue!]!
   about: String!
 }
 
 type Mutation {
   addProduct(product: ProductInputs!): Product!
+  addIssue(issue: IssueInputs!): Issue!
   setAboutMessage(message: String!): String
 }
